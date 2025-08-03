@@ -6,54 +6,66 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors - Military Precision */
-    --background: 0 0% 98%;
-    --foreground: 215 25% 12%;
+    /* Core Brand Colors - Ultra Premium Palette */
+    --background: 0 0% 99%;
+    --foreground: 220 30% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 12%;
+    --card-foreground: 220 30% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 12%;
+    --popover-foreground: 220 30% 8%;
 
-    /* Primary - Deep Naval Blue */
-    --primary: 215 75% 15%;
-    --primary-foreground: 0 0% 98%;
-    --primary-light: 215 60% 25%;
+    /* Primary - Deep Midnight Navy */
+    --primary: 218 85% 12%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 218 70% 18%;
+    --primary-dark: 218 95% 8%;
 
-    /* Secondary - Tactical Black */
-    --secondary: 215 15% 8%;
-    --secondary-foreground: 0 0% 95%;
+    /* Secondary - Sophisticated Charcoal */
+    --secondary: 220 25% 10%;
+    --secondary-foreground: 0 0% 98%;
 
-    /* Accent - Prestigious Gold */
-    --accent: 45 85% 55%;
-    --accent-foreground: 215 25% 12%;
-    --accent-dark: 45 75% 45%;
+    /* Accent - Luxurious Platinum Gold */
+    --accent: 48 100% 68%;
+    --accent-foreground: 220 30% 8%;
+    --accent-dark: 45 90% 55%;
+    --accent-light: 50 100% 85%;
 
     /* Military Red for Trust Badges */
-    --military-red: 0 75% 45%;
-    --military-red-foreground: 0 0% 98%;
+    --military-red: 5 85% 50%;
+    --military-red-foreground: 0 0% 100%;
 
-    /* Muted Tones */
-    --muted: 215 20% 92%;
-    --muted-foreground: 215 15% 45%;
+    /* Premium Silver Accents */
+    --silver: 210 20% 75%;
+    --silver-dark: 210 25% 60%;
+    --silver-light: 210 15% 90%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Muted Premium Tones */
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 20% 45%;
 
-    --border: 215 20% 88%;
-    --input: 215 20% 94%;
-    --ring: 215 75% 15%;
+    --destructive: 0 90% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-dark)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
+    --border: 220 15% 92%;
+    --input: 220 10% 97%;
+    --ring: 218 85% 12%;
+
+    /* Ultra Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-dark)), hsl(var(--accent)), hsl(var(--accent-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--secondary) / 0.95), hsl(var(--primary) / 0.9), hsl(var(--primary-dark)));
+    --gradient-premium: linear-gradient(135deg, hsl(var(--silver-dark)), hsl(var(--silver)), hsl(var(--silver-light)));
+    --gradient-luxury: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent) / 0.8), hsl(var(--accent-light)));
     
-    /* Shadows for Premium Feel */
-    --shadow-premium: 0 20px 40px -12px hsl(var(--primary) / 0.25);
-    --shadow-hover: 0 25px 50px -12px hsl(var(--primary) / 0.35);
-    --shadow-accent: 0 10px 30px -8px hsl(var(--accent) / 0.3);
+    /* Premium Shadows & Effects */
+    --shadow-premium: 0 25px 60px -15px hsl(var(--primary) / 0.3), 0 8px 32px -8px hsl(var(--accent) / 0.15);
+    --shadow-hover: 0 32px 80px -12px hsl(var(--primary) / 0.4), 0 12px 40px -8px hsl(var(--accent) / 0.25);
+    --shadow-accent: 0 15px 35px -8px hsl(var(--accent) / 0.4);
+    --shadow-luxury: 0 20px 50px -12px hsl(var(--primary) / 0.25), 0 8px 25px -8px hsl(var(--silver) / 0.3);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.5);
+    --shadow-inset: inset 0 2px 8px hsl(var(--primary) / 0.1);
 
     /* Smooth Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -79,49 +91,66 @@
   }
 
   .dark {
-    /* Dark Mode - Tactical Elegance */
-    --background: 215 25% 5%;
-    --foreground: 0 0% 95%;
+    /* Dark Mode - Premium Elegance */
+    --background: 220 30% 3%;
+    --foreground: 0 0% 98%;
 
-    --card: 215 20% 8%;
-    --card-foreground: 0 0% 95%;
+    --card: 220 25% 5%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 215 20% 8%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 25% 5%;
+    --popover-foreground: 0 0% 98%;
 
-    /* Dark Primary - Brighter Naval Blue */
-    --primary: 215 85% 65%;
-    --primary-foreground: 215 25% 5%;
-    --primary-light: 215 75% 75%;
+    /* Dark Primary - Electric Blue */
+    --primary: 218 95% 75%;
+    --primary-foreground: 220 30% 3%;
+    --primary-light: 218 85% 85%;
+    --primary-dark: 218 100% 65%;
 
-    /* Dark Secondary - Deep Black */
-    --secondary: 215 15% 12%;
-    --secondary-foreground: 0 0% 95%;
+    /* Dark Secondary - Rich Black */
+    --secondary: 220 30% 8%;
+    --secondary-foreground: 0 0% 98%;
 
-    /* Dark Accent - Bright Gold */
-    --accent: 45 95% 65%;
-    --accent-foreground: 215 25% 5%;
-    --accent-dark: 45 85% 55%;
+    /* Dark Accent - Brilliant Gold */
+    --accent: 48 100% 75%;
+    --accent-foreground: 220 30% 3%;
+    --accent-dark: 45 95% 65%;
+    --accent-light: 50 100% 88%;
 
     /* Dark Military Red */
-    --military-red: 0 85% 55%;
-    --military-red-foreground: 0 0% 98%;
+    --military-red: 5 90% 60%;
+    --military-red-foreground: 0 0% 100%;
+
+    /* Premium Silver in Dark */
+    --silver: 210 25% 45%;
+    --silver-dark: 210 30% 35%;
+    --silver-light: 210 20% 65%;
 
     /* Dark Muted */
-    --muted: 215 15% 15%;
-    --muted-foreground: 215 10% 65%;
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 15% 70%;
 
-    --destructive: 0 85% 65%;
-    --destructive-foreground: 215 25% 5%;
+    --destructive: 0 95% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 215 15% 18%;
-    --input: 215 15% 12%;
-    --ring: 215 85% 65%;
+    --border: 220 20% 15%;
+    --input: 220 25% 8%;
+    --ring: 218 95% 75%;
 
-    /* Dark Mode Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-dark)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--secondary)));
+    /* Dark Mode Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary-dark)), hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent-dark)), hsl(var(--accent)), hsl(var(--accent-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--secondary)), hsl(var(--primary-dark) / 0.8));
+    --gradient-premium: linear-gradient(135deg, hsl(var(--silver-dark)), hsl(var(--silver)), hsl(var(--silver-light)));
+    --gradient-luxury: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent) / 0.9), hsl(var(--accent-light)));
+
+    /* Dark Mode Premium Shadows */
+    --shadow-premium: 0 25px 60px -15px hsl(var(--primary) / 0.4), 0 8px 32px -8px hsl(var(--accent) / 0.2);
+    --shadow-hover: 0 32px 80px -12px hsl(var(--primary) / 0.5), 0 12px 40px -8px hsl(var(--accent) / 0.3);
+    --shadow-accent: 0 15px 35px -8px hsl(var(--accent) / 0.5);
+    --shadow-luxury: 0 20px 50px -12px hsl(var(--primary) / 0.3), 0 8px 25px -8px hsl(var(--silver) / 0.2);
+    --shadow-glow: 0 0 30px hsl(var(--accent) / 0.6);
+    --shadow-inset: inset 0 2px 8px hsl(var(--primary) / 0.2);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

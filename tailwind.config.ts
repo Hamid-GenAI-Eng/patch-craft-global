@@ -27,7 +27,8 @@ export default {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
-					light: 'hsl(var(--primary-light))'
+					light: 'hsl(var(--primary-light))',
+					dark: 'hsl(var(--primary-dark))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -44,7 +45,13 @@ export default {
 				accent: {
 					DEFAULT: 'hsl(var(--accent))',
 					foreground: 'hsl(var(--accent-foreground))',
-					dark: 'hsl(var(--accent-dark))'
+					dark: 'hsl(var(--accent-dark))',
+					light: 'hsl(var(--accent-light))'
+				},
+				silver: {
+					DEFAULT: 'hsl(var(--silver))',
+					dark: 'hsl(var(--silver-dark))',
+					light: 'hsl(var(--silver-light))'
 				},
 				'military-red': {
 					DEFAULT: 'hsl(var(--military-red))',
@@ -128,12 +135,17 @@ export default {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-accent': 'var(--gradient-accent)',
 				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-premium': 'var(--gradient-premium)',
+				'gradient-luxury': 'var(--gradient-luxury)',
 				'shimmer-gradient': 'linear-gradient(90deg, transparent 30%, hsl(var(--accent) / 0.5) 50%, transparent 70%)'
 			},
 			boxShadow: {
 				'premium': 'var(--shadow-premium)',
 				'hover': 'var(--shadow-hover)',
-				'accent': 'var(--shadow-accent)'
+				'accent': 'var(--shadow-accent)',
+				'luxury': 'var(--shadow-luxury)',
+				'glow': 'var(--shadow-glow)',
+				'inset': 'var(--shadow-inset)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
