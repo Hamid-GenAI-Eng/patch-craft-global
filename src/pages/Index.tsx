@@ -1,4 +1,6 @@
+
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ProductCategories from "@/components/ProductCategories";
 import AboutSection from "@/components/AboutSection";
@@ -15,6 +17,7 @@ const Index = () => {
         <AboutSection />
         <ContactSection />
       </main>
+      <Footer />
       <Chatbot />
     </div>
   );
