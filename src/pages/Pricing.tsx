@@ -10,41 +10,68 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Check, Star, Zap, Shield, Truck, Clock } from "lucide-react";
 
 const Pricing = () => {
-  const [selectedCategory, setSelectedCategory] = useState("patches");
+  const [selectedCategory, setSelectedCategory] = useState("embroidered");
 
-  const patchPricing = [
-    { size: '1"', quantity: "50-99", price: "120", popular: false },
-    { size: '1"', quantity: "100-249", price: "95", popular: false },
-    { size: '1"', quantity: "250-499", price: "75", popular: true },
-    { size: '1"', quantity: "500+", price: "60", popular: false },
-    { size: '2"', quantity: "50-99", price: "180", popular: false },
-    { size: '2"', quantity: "100-249", price: "150", popular: false },
-    { size: '2"', quantity: "250-499", price: "120", popular: true },
-    { size: '2"', quantity: "500+", price: "95", popular: false },
-    { size: '3"', quantity: "50-99", price: "250", popular: false },
-    { size: '3"', quantity: "100-249", price: "220", popular: false },
-    { size: '3"', quantity: "250-499", price: "180", popular: true },
-    { size: '3"', quantity: "500+", price: "150", popular: false },
-    { size: '4"', quantity: "50-99", price: "320", popular: false },
-    { size: '4"', quantity: "100-249", price: "280", popular: false },
-    { size: '4"', quantity: "250-499", price: "240", popular: true },
-    { size: '4"', quantity: "500+", price: "200", popular: false },
-  ];
+  const quantities = ["50-99", "100-249", "250-499", "500-999", "1000+"];
+  const sizes = ['1"', '2"', '3"', '4"', '5"'];
 
-  const badgePricing = [
-    { size: '1.5"', quantity: "50-99", price: "150", popular: false },
-    { size: '1.5"', quantity: "100-249", price: "120", popular: false },
-    { size: '1.5"', quantity: "250-499", price: "95", popular: true },
-    { size: '1.5"', quantity: "500+", price: "75", popular: false },
-    { size: '2.5"', quantity: "50-99", price: "220", popular: false },
-    { size: '2.5"', quantity: "100-249", price: "180", popular: false },
-    { size: '2.5"', quantity: "250-499", price: "150", popular: true },
-    { size: '2.5"', quantity: "500+", price: "120", popular: false },
-    { size: '3.5"', quantity: "50-99", price: "300", popular: false },
-    { size: '3.5"', quantity: "100-249", price: "260", popular: false },
-    { size: '3.5"', quantity: "250-499", price: "220", popular: true },
-    { size: '3.5"', quantity: "500+", price: "180", popular: false },
-  ];
+  const categoryPricing = {
+    embroidered: {
+      name: "Embroidered Patches",
+      description: "Premium quality embroidered patches with various backing options",
+      prices: {
+        '1"': [120, 95, 75, 60, 45],
+        '2"': [180, 150, 120, 95, 75],
+        '3"': [250, 220, 180, 150, 120],
+        '4"': [320, 280, 240, 200, 160],
+        '5"': [400, 350, 300, 250, 200],
+      }
+    },
+    pvc: {
+      name: "PVC Patches",
+      description: "Durable 3D PVC patches, waterproof and long-lasting",
+      prices: {
+        '1"': [150, 125, 100, 80, 65],
+        '2"': [220, 190, 160, 130, 100],
+        '3"': [300, 270, 230, 190, 150],
+        '4"': [380, 340, 290, 240, 190],
+        '5"': [450, 400, 350, 290, 230],
+      }
+    },
+    woven: {
+      name: "Woven Patches",
+      description: "Fine detail woven patches with crisp text and intricate designs",
+      prices: {
+        '1"': [100, 80, 65, 50, 40],
+        '2"': [160, 130, 110, 85, 70],
+        '3"': [220, 190, 160, 130, 105],
+        '4"': [280, 240, 210, 170, 140],
+        '5"': [350, 300, 260, 210, 175],
+      }
+    },
+    leather: {
+      name: "Leather Patches",
+      description: "Premium genuine leather patches with debossed or laser engraving",
+      prices: {
+        '1"': [200, 170, 140, 120, 95],
+        '2"': [280, 240, 200, 170, 135],
+        '3"': [380, 330, 280, 240, 190],
+        '4"': [480, 420, 360, 310, 245],
+        '5"': [580, 510, 440, 380, 300],
+      }
+    },
+    chenille: {
+      name: "Chenille Patches",
+      description: "Vintage-style chenille patches perfect for letterman jackets",
+      prices: {
+        '1"': [180, 150, 125, 100, 80],
+        '2"': [260, 220, 185, 150, 120],
+        '3"': [350, 300, 250, 200, 160],
+        '4"': [440, 380, 320, 260, 210],
+        '5"': [530, 460, 390, 320, 260],
+      }
+    }
+  };
 
   const features = [
     { icon: <Shield className="w-5 h-5" />, title: "Premium Quality", desc: "Military-grade materials" },
@@ -205,96 +232,78 @@ const Pricing = () => {
             </div>
 
             <Tabs value={selectedCategory} onValueChange={setSelectedCategory} className="w-full">
-              <TabsList className="grid w-full grid-cols-2 mb-8 max-w-md mx-auto">
-                <TabsTrigger value="patches" className="rounded-xl">Patches</TabsTrigger>
-                <TabsTrigger value="badges" className="rounded-xl">Badges</TabsTrigger>
+              <TabsList className="grid w-full grid-cols-5 mb-8 max-w-4xl mx-auto h-auto p-1 bg-muted">
+                <TabsTrigger value="embroidered" className="rounded-lg p-3 text-sm">Embroidered</TabsTrigger>
+                <TabsTrigger value="pvc" className="rounded-lg p-3 text-sm">PVC</TabsTrigger>
+                <TabsTrigger value="woven" className="rounded-lg p-3 text-sm">Woven</TabsTrigger>
+                <TabsTrigger value="leather" className="rounded-lg p-3 text-sm">Leather</TabsTrigger>
+                <TabsTrigger value="chenille" className="rounded-lg p-3 text-sm">Chenille</TabsTrigger>
               </TabsList>
 
-              <TabsContent value="patches">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-2xl">Patch Pricing (PKR)</CardTitle>
-                    <CardDescription>
-                      Professional embroidered patches with backing options
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="overflow-x-auto">
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead className="font-semibold">Size</TableHead>
-                          <TableHead className="font-semibold">Quantity</TableHead>
-                          <TableHead className="font-semibold text-right">Price per piece (PKR)</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {patchPricing.map((item, index) => (
-                          <TableRow 
-                            key={index}
-                            className={item.popular ? 'bg-accent/10 border-accent/20' : ''}
-                          >
-                            <TableCell className="font-medium">{item.size}</TableCell>
-                            <TableCell>
-                              {item.quantity}
-                              {item.popular && (
-                                <Badge variant="secondary" className="ml-2 text-xs">
-                                  Popular
-                                </Badge>
-                              )}
-                            </TableCell>
-                            <TableCell className="text-right font-semibold">
-                              PKR {item.price}
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </CardContent>
-                </Card>
-              </TabsContent>
+              {Object.entries(categoryPricing).map(([categoryKey, category]) => (
+                <TabsContent key={categoryKey} value={categoryKey}>
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-2xl">{category.name} - Pricing Chart (PKR)</CardTitle>
+                      <CardDescription>
+                        {category.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="overflow-x-auto">
+                      <div className="min-w-[600px]">
+                        {/* Header Row with Quantities */}
+                        <div className="grid grid-cols-6 gap-2 mb-2">
+                          <div className="font-semibold text-center p-3 bg-muted rounded-lg">
+                            Size / Quantity
+                          </div>
+                          {quantities.map((quantity) => (
+                            <div key={quantity} className="font-semibold text-center p-3 bg-muted rounded-lg text-sm">
+                              {quantity} pcs
+                            </div>
+                          ))}
+                        </div>
 
-              <TabsContent value="badges">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-2xl">Badge Pricing (PKR)</CardTitle>
-                    <CardDescription>
-                      Premium metal and fabric badges with custom designs
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="overflow-x-auto">
-                    <Table>
-                      <TableHeader>
-                        <TableRow>
-                          <TableHead className="font-semibold">Size</TableHead>
-                          <TableHead className="font-semibold">Quantity</TableHead>
-                          <TableHead className="font-semibold text-right">Price per piece (PKR)</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        {badgePricing.map((item, index) => (
-                          <TableRow 
-                            key={index}
-                            className={item.popular ? 'bg-accent/10 border-accent/20' : ''}
-                          >
-                            <TableCell className="font-medium">{item.size}</TableCell>
-                            <TableCell>
-                              {item.quantity}
-                              {item.popular && (
-                                <Badge variant="secondary" className="ml-2 text-xs">
-                                  Popular
-                                </Badge>
-                              )}
-                            </TableCell>
-                            <TableCell className="text-right font-semibold">
-                              PKR {item.price}
-                            </TableCell>
-                          </TableRow>
+                        {/* Price Grid */}
+                        {sizes.map((size) => (
+                          <div key={size} className="grid grid-cols-6 gap-2 mb-2">
+                            <div className="font-semibold text-center p-3 bg-accent/10 rounded-lg flex items-center justify-center">
+                              {size}
+                            </div>
+                            {category.prices[size].map((price, index) => (
+                              <div 
+                                key={index} 
+                                className={`text-center p-3 rounded-lg border transition-all duration-200 hover:shadow-md ${
+                                  index === 2 ? 'bg-accent/20 border-accent text-accent-foreground font-semibold' : 'bg-background border-border hover:border-accent/30'
+                                }`}
+                              >
+                                <div className="text-lg font-bold">PKR {price}</div>
+                                {index === 2 && (
+                                  <Badge variant="secondary" className="mt-1 text-xs">
+                                    Popular
+                                  </Badge>
+                                )}
+                              </div>
+                            ))}
+                          </div>
                         ))}
-                      </TableBody>
-                    </Table>
-                  </CardContent>
-                </Card>
-              </TabsContent>
+
+                        {/* Legend */}
+                        <div className="mt-6 p-4 bg-muted/50 rounded-lg">
+                          <div className="text-sm text-muted-foreground">
+                            <div className="font-semibold mb-2">Pricing Notes:</div>
+                            <ul className="space-y-1 text-xs">
+                              <li>• Prices include standard backing (velcro, iron-on, or sew-on)</li>
+                              <li>• Custom shapes and special requirements may affect pricing</li>
+                              <li>• Bulk discounts available for orders over 1000 pieces</li>
+                              <li>• Setup fee may apply for new designs</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              ))}
             </Tabs>
           </div>
         </section>
