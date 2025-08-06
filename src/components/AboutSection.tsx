@@ -48,13 +48,13 @@ const AboutSection = () => {
           <Badge variant="outline" className="border-primary text-primary mb-4">
             About Custom Flex Patches
           </Badge>
-          <h2 className="text-4xl lg:text-6xl font-bold text-foreground">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground">
             Crafting Excellence{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Since 2008
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             From our humble beginnings to becoming the trusted partner of Pakistan Air Force, we've built our reputation on quality, precision, and unwavering commitment to excellence.
           </p>
         </div>
@@ -134,7 +134,7 @@ const AboutSection = () => {
         </div>
 
         {/* Achievements Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-16">
           {achievements.map((achievement, index) => {
             const IconComponent = achievement.icon;
             return (
@@ -163,7 +163,7 @@ const AboutSection = () => {
           <h3 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-12">
             Numbers That Speak for Themselves
           </h3>
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
             {stats.map((stat, index) => (
               <div 
                 key={index} 

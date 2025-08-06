@@ -52,7 +52,7 @@ const HeroSection = () => {
 
             {/* Main Heading */}
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground leading-tight">
                 Trusted by{" "}
                 <span className="bg-gradient-accent bg-clip-text text-transparent">
                   Forces
@@ -63,24 +63,24 @@ const HeroSection = () => {
                   World
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+              <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl">
                 Premium custom patches manufactured with military precision. From Pakistan Air Force to global brands - we deliver excellence in every stitch.
               </p>
             </div>
 
             {/* Stats */}
-            <div className="flex items-center space-x-8 py-4">
+            <div className="grid grid-cols-3 gap-4 sm:flex sm:items-center sm:space-x-8 py-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">15+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+                <div className="text-2xl sm:text-3xl font-bold text-accent">15+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">50K+</div>
-                <div className="text-sm text-muted-foreground">Patches Delivered</div>
+                <div className="text-2xl sm:text-3xl font-bold text-accent">50K+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Patches Delivered</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">100+</div>
-                <div className="text-sm text-muted-foreground">Global Clients</div>
+                <div className="text-2xl sm:text-3xl font-bold text-accent">100+</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">Global Clients</div>
               </div>
             </div>
 

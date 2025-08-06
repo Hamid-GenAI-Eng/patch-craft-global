@@ -84,18 +84,18 @@ const ContactSection = () => {
           <Badge variant="outline" className="border-accent text-accent mb-4">
             Get In Touch
           </Badge>
-          <h2 className="text-4xl lg:text-6xl font-bold text-foreground">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-foreground">
             Let's Create Something{" "}
             <span className="bg-gradient-accent bg-clip-text text-transparent">
               Amazing
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to bring your patch ideas to life? Our team of specialists is here to guide you from concept to completion.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Left - Contact Info */}
           <div className="space-y-8">
             <div className="space-y-6">
